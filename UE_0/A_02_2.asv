@@ -14,12 +14,10 @@ for i=1:1:size(x,1)
 end
 toc
 
-d=d(:);
-
 % da Rundungsfeher entstehen, geht das nicht
 % if isequal(c, d)
-if any(abs(c-d) > 10^(-5))
-    fprintf('c und d sind nicht gleich!')
-else
+if abs(c-d) > 10^
     fprintf('c und d sind gleich!')
+else
+    fprintf('c und d nicht sind gleich!')
 end
