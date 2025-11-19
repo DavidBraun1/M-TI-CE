@@ -1,3 +1,5 @@
+clear
+
 t = 0:pi/128:6*pi;
 T = 2*pi;
 nn = 1000;
@@ -6,7 +8,7 @@ aa = 0;
 bb = T;
 X = linspace(aa, bb, nn);
 f = X.^2;
-n = 25;
+n = 900;
 
 a0 = 2/T * trapz(X, f.*cos(0*w*X));
 
