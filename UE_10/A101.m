@@ -23,8 +23,9 @@ for j=1:length(alpha_val)
         if rand < alpha
             %wenn wir in keinem hängenden Knoten sind
             if any(links{site})
-                idx = randi(numel(links{site}));
-                next = links{site}(idx);
+                nz = links{site}(links{site} ~= 0);
+                idx = randi(numel(nz));
+                next = nz(idx);
             %wenn wir in einem hängendem Knoten sind
             else
                 next = randi([1,9]);
