@@ -1,3 +1,5 @@
+clear
+
 function f = func(x)
     f = cos(x^2);
 end

@@ -1,3 +1,5 @@
+clear
+
 function a = iterativ(n)
 
 if n==1 || n==2
@@ -50,7 +52,7 @@ a = result(2,1);
 end
 %-------------------------------------------%
 
-n = 5;
+n = 7;
 disp(['n ist gleich ', num2str(n)])
 disp(['Ergebnis iterativ: ', num2str(iterativ(n))])
 disp(['Ergebnis rekursiv: ', num2str(rekursiv(n))])

@@ -3,6 +3,7 @@ clear
 function out = XYZ(t,y)
     out = (1 - y) * y;
 end
+
 hold on
 for y0=0.01:0.01:1.5
     [t, y] = ode45(@XYZ, [0, 10], y0);

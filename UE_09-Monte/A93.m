@@ -62,13 +62,15 @@ for i=1:N
     theta_s = 0 + (2*pi-0) * rand();
     rho_s = 1;
     
-    %theta berechnen mit atan2(x,y)
-    theta_new = atan2((rho_s*sin(theta_s) + rho*sin(theta)), ...
-        ((rho_s*cos(theta_s) + rho*cos(theta))));
+    %x und y neu
+    y_neu = rho_s*sin(theta_s) + rho*sin(theta);
+    x_neu = rho_s*cos(theta_s) + rho*cos(theta);
 
-       %rho neu berechnen
-    rho_new = sqrt((rho_s*cos(theta_s) + rho*cos(theta))^2 ...
-        + ((rho_s*sin(theta_s) + rho*sin(theta))^2));
+    %theta berechnen mit atan2(y_neu,x_neu)
+    theta_new = atan2(y_neu, x_neu);
+
+    %rho neu berechnen mit sqrt(x_neu^2 + y_neu^2)
+    rho_new = sqrt(x_neu^2 + y_neu^2);
 
     theta_val(i+1) = theta_new;
     rho_val(i+1) = rho_new;
@@ -95,13 +97,15 @@ for i=1:N
     theta_s = 0 + (2*pi-0) * rand();
     rho_s = 3 * randn();
 
-    %theta berechnen mit atan2(x,y)
-    theta_new = atan2((rho_s*sin(theta_s) + rho*sin(theta)), ...
-        ((rho_s*cos(theta_s) + rho*cos(theta))));
+    %x und y neu
+    y_neu = rho_s*sin(theta_s) + rho*sin(theta);
+    x_neu = rho_s*cos(theta_s) + rho*cos(theta);
 
-       %rho neu berechnen
-    rho_new = sqrt((rho_s*cos(theta_s) + rho*cos(theta))^2 ...
-        + ((rho_s*sin(theta_s) + rho*sin(theta))^2));
+    %theta berechnen mit atan2(y_neu,x_neu)
+    theta_new = atan2(y_neu, x_neu);
+
+    %rho neu berechnen mit sqrt(x_neu^2 + y_neu^2)
+    rho_new = sqrt(x_neu^2 + y_neu^2);
 
     theta_val(i+1) = theta_new;
     rho_val(i+1) = rho_new;

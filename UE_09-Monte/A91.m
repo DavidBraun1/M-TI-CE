@@ -18,14 +18,14 @@ zahlen = x./m;
 %zahlen = rand(1,12000);
 
 figure(1)
-hist(zahlen,12000);
+hist(zahlen,100);
 %----b----
 for j=1:length(zahlen)/2
     uneven(j) = zahlen(2*j-1);
     even(j) = zahlen(2*j);
 end
 figure(2)
-plot(even, uneven, '.');
+plot(even, uneven, 'y.');
 
 x1 = zahlen(1:3:end);
 x2 = zahlen(2:3:end);
@@ -68,9 +68,14 @@ AABC = 0;
 ABCD = 0;
 
 for l=1:length(z1)
+    % 4 Zufallszahlen zu einem Vektor zusammenfassen
     v = [z1(l), z2(l), z3(l), z4(l)];
+     % Zähle, wie viele Werte in jedem 0.1-Bin von [0,1] liegen
     counts = histcounts(v, 0:0.1:1);
-    counts = sort(counts(counts>0), 'descend');
+    % Leere Bins entfernen 
+    counts = counts(counts>0);
+    % Häufigkeiten absteigend sortieren
+    counts = sort(counts, 'descend');
 
     if isequal(counts, [4])
         AAAA = AAAA + 1;

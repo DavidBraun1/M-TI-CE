@@ -1,3 +1,5 @@
+clear
+
 fprintf('Ohne Allokation: \n')
 tic
 x = 1:10000;

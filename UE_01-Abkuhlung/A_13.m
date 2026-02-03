@@ -31,5 +31,5 @@ hold off
 stamps3 = [10 20 30 40 50 100];
 
 disp(table(stamps3', T_d(stamps3)', T_d3(stamps3)', 'VariableNames',["t", "(1)", "(3)"]))
-%Mit öherem k wird die Wärme schneller abgegeben, deswegen erreicht das
+%Mit höherem k wird die Wärme schneller abgegeben, deswegen erreicht das
 %Modell schnell Raumtemperatur.

@@ -1,4 +1,9 @@
+clear
+
 %Variabeln
+
+global T_u k
+
 T_u = 70;
 T_0 = 200;
 k = 0.015;

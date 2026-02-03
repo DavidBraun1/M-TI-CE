@@ -88,7 +88,8 @@ while true
         break;
     end
     %Switch 2 random elemente
-    v = randi(numel(route_best),1,2);
+    %v = randi(numel(route_best),1,2);
+    v = randperm(numel(route_best), 2);
     route(v) = route(v([2,1]));
 end
 
@@ -152,7 +153,7 @@ while true
     end
 
     %Kicks einfügen
-    if fail_counter > (max_fails2 * 0.75) && rand < 0.01
+    if fail_counter > (max_fails2 * 0.75) && rand < 0.05
         T(nn) = T(nn) * 2;
     end
 

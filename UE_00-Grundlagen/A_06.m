@@ -1,3 +1,5 @@
+clear
+
 x = logspace(1, -10, 12);
 y = (1 - cos(x)) ./ (x.^2);
 

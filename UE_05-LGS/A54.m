@@ -1,4 +1,3 @@
-clc
 clear
 close all
 
@@ -25,10 +24,10 @@ disp(xL)
 
 function out = LGS(x)
 
-global A
-global b
-
-out = norm(A*x-b,2)^2;
+    global A
+    global b
+    
+    out = norm(A*x-b,2)^2;
 
 end
 

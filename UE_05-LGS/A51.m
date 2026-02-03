@@ -1,3 +1,5 @@
+clear
+
 %Vars
 A = [
     4 -1 1

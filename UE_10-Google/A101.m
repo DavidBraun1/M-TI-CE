@@ -23,8 +23,10 @@ for j=1:length(alpha_val)
         if rand < alpha
             %wenn wir in keinem hängenden Knoten sind
             if any(links{site})
-                nz = links{site}(links{site} ~= 0);
+                nz = links{site};
+                %Anzahl möglicher Ziele und zieht zufälligen Index
                 idx = randi(numel(nz));
+                %setzt den nächsten Knoten auf dieses Ziel
                 next = nz(idx);
             %wenn wir in einem hängendem Knoten sind
             else

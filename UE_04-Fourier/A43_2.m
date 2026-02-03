@@ -1,7 +1,7 @@
 %Fourieranalyse mit dem verrauschten Signal
 
 clear
-load("C:\Users\tenni\Documents\BHT\M-TI-CE\UE_4\BeispielsignalFourier.mat");
+load("BeispielsignalFourier.mat");
 
 %Konstanten
 T = 2*pi;
@@ -38,7 +38,6 @@ hold off
 title("a und b Koeffizienten")
 
 %Wiederherstellen
-
 for i=1:n
     if abs(a(i))<thresh
         a(i) = 0;

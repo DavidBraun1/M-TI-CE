@@ -18,8 +18,8 @@ function out = moore(grid, zeile, spalte)
 end
 
 %Game of Life-----------------------------------------
-n = 50;
-max_steps = 100;
+n = 100;
+max_steps = 300;
 dichte = 0.5;
 
 %Init

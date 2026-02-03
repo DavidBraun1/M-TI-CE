@@ -3,8 +3,10 @@ A_11;
 
 T_a = T_0;
 
-syms t
-T_k(t) = (T_a - T_u) * exp(-k*t) + T_u;
+function out = T_k(t)
+    global T_a T_u k
+    out = (T_a - T_u) * exp(-k .* t) + T_u;
+end
 
 hold on
 plot(0:n, T_k(0:n))

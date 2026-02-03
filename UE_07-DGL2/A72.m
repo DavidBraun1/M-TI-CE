@@ -1,3 +1,5 @@
+clear
+
 function out = DGL(t, y)
     global p;
     out = zeros(2,1);
@@ -58,7 +60,7 @@ k2 = 0.01;
 
 figure(6)
 subplot(1,2,1)
-[t, y] = ode45(@DGL_neu, [0, 50], y0);
+[t, y] = ode45(@DGL_neu, [0, 100], y0);
 plot(t,y)
 legend("y1", "y2")
 ylabel("y")

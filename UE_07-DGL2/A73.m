@@ -1,3 +1,5 @@
+clear
+
 function out = DGL(t, y)
     global u;
     out = zeros(2,1);

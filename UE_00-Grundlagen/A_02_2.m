@@ -1,8 +1,10 @@
+clear
+
 x = rand(10000000,1);
 y = rand(10^7,1);
 
-size(x)
-size(y)
+size(x);
+size(y);
 
 tic
 c = x .* y;
@@ -14,12 +16,13 @@ for i=1:1:size(x,1)
 end
 toc
 
+%Macht Spaltenvektor draus
 d=d(:);
 
 % da Rundungsfeher entstehen, geht das nicht
 % if isequal(c, d)
 if any(abs(c-d) > 10^(-5))
-    fprintf('c und d sind nicht gleich!')
+    fprintf('c und d sind nicht gleich!\n')
 else
-    fprintf('c und d sind gleich!')
+    fprintf('c und d sind gleich!\n')
 end

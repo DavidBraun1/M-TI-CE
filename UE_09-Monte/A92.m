@@ -9,18 +9,22 @@ function y = funcb(x)
 end
 
 function [integral, above_val, under_val] = monte_inte(N, xmin, xmax, ymin, ymax, func)
+    % Zufällige x- und y-Punkte gleichverteilt im Rechteck erzeugen
     x_val = xmin + (xmax-xmin) .* rand(N, 1);
     y_val = ymin + (ymax-ymin) .* rand(N, 1);
     
+    % Zähler initialisieren und Ergebnisvektor anlegen
     above = 0;
     under = 0;
     integral = zeros(N, 1);
     A = abs(ymin-ymax) * abs(xmin-xmax);
     
     for i=1:N
+        % i-ter Zufallspunkt auswählen
         x = x_val(i);
         y = y_val(i);
     
+        % Punkt nach Lage relativ zu f(x) klassifizieren und speichern
         if y>func(x)
             above = above+1;
             above_val(above, 1) = x;
@@ -31,6 +35,7 @@ function [integral, above_val, under_val] = monte_inte(N, xmin, xmax, ymin, ymax
             under_val(under, 2) = y;
         end
         
+        % Monte-Carlo-Integral nach i Stichproben aktualisieren
         integral(i) = A * under/i;
     end
 end
@@ -57,6 +62,7 @@ xcords = 1:10000;
 xcords = xcords';
 hold on
 plot(xcords, res.*4)
+%A_kreis = pi*r^2 | Viertelkreis -> /4
 end_val = 4 * res(end);
 title("Annäherung an Pi mit dem Endwert von "+end_val);
 yline(pi)

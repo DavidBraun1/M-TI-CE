@@ -104,20 +104,24 @@ res_h = zeros(1,length(h_error));
 res_r = zeros(1,length(h_error));
 res_ex = zeros(1,length(h_error));
 
+%Fehler am Endpunkt jeder Schrittweite h
 for i=1:length(h_error)
     temp = euler(t0, tN, y0, h_error(i));
     res_e(i) = temp(end);
+
     temp = heun(t0, tN, y0, h_error(i));
     res_h(i) = temp(end);
+
     temp = rungekutta(t0, tN, y0, h_error(i));
     res_r(i) = temp(end); 
+    
     temp = exakt(t0, tN, h_error(i));
     res_ex(i) = temp(end);
 end
 
-d_e = abs(res_e - res_ex(end));
-d_h = abs(res_h - res_ex(end));
-d_r = abs(res_r - res_ex(end));
+d_e = abs(res_e - res_ex);
+d_h = abs(res_h - res_ex);
+d_r = abs(res_r - res_ex);
 
 figure(2)
 hold on

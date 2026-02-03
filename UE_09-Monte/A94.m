@@ -35,7 +35,9 @@ mem = zeros(2,goal*2+1);
 while true
     %wenn schonmal auf dem Feld gewesen
     if x ~= 0 && sum(mem(:,goal+x+1)) ~= 0
-        pr = (mem(1,goal+x+1)+100) / (mem(1,goal+x+1)+mem(2,goal+x+1)+200);
+        ri = mem(1,goal+x+1);
+        li = mem(2,goal+x+1);
+        pr = (ri+100) / (ri+li+200);
 
         if rand < pr
             x = x+1;
@@ -45,7 +47,7 @@ while true
         else
             x = x-1;
             if x~=0
-                mem(1,goal+x+1) = mem(1,goal+x+1)-1;
+                mem(2,goal+x+1) = mem(2,goal+x+1)+1;
             end
         end
     %wenn erstes Mal auf dem Feld
@@ -58,7 +60,7 @@ while true
         else
             x = x-1;
             if x~=0
-                mem(1,goal+x+1) = mem(1,goal+x+1)-1;
+                mem(2,goal+x+1) = mem(2,goal+x+1)+1;
             end
         end
     end

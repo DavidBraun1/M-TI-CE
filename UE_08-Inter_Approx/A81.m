@@ -37,6 +37,7 @@ end
 
 %b)
 for l=1:length(n_val)
+    n = n_val(l);
     x = x_cell{l};
     y = y_cell{l};
     x_s = linspace(i_start, i_end);

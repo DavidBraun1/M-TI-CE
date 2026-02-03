@@ -21,7 +21,7 @@ for j=1:length(d_val)
         err_s(j,k) = sum(abs(x_min_s - 1));
         iters_s(j,k) = output_s.iterations;
 
-        %fminsearch
+        %fminunc
         tic
         [x_min_u,~,~,output_u] = fminunc(@fun, x0);
         tu(j,k) = toc;

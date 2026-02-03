@@ -1,7 +1,7 @@
 %Fourieranalyse mit dem normalen Signal
 
 clear
-load("C:\Users\tenni\Documents\BHT\M-TI-CE\UE_4\BeispielsignalFourier.mat");
+load("BeispielsignalFourier.mat");
 
 %Konstanten
 T = 2*pi;

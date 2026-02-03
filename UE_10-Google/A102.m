@@ -11,15 +11,10 @@ H = ones(N);
 H = A .* H;
 %Setzt Diagonale 0
 H = H - diag(diag(H));
-%values soll schauen, wie oft eine seite verlinkt ist pro zeile
-values = zeros(N,1);
-summ = sum(H, 2);
-mask0 = summ ~= 0;
-values(mask0) = 1 ./ summ(mask0);
-values = values * ones(1,N);
-%setzen der values in die Hyperlink Matrix
-mask1 = H == 1;
-H(mask1) = values(mask1);
+%Wenn mehr als 1 Verlinkung pro Seite
+rowSum = sum(H,2);              % Anzahl Links pro Zeile
+H(rowSum>0,:) = H(rowSum>0,:) ./ rowSum(rowSum>0); %normieren
+
 
 %Zufallssurfer
 start = randi([1,N]);
@@ -56,6 +51,7 @@ haengend = all(M == 0, 2);
 M(haengend, :) = 1/(N-1);
 M = M - diag(diag(M));
 
+%Einheitsmatrix
 E = ones(N) * 1/(N-1);
 E = E - diag(diag(E));
 
@@ -63,7 +59,7 @@ G = alpha .* M + (1-alpha)*1/N*E;
 
 r_alt = ones(N,1) / N;
 
-for k=1:100
+for k=1:1000
     r = G' * r_alt;
     r_alt = r;
 end
